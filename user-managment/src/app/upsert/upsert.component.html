@@ -1,0 +1,36 @@
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <form [formGroup]="myForm">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input class="form-control" type="text" formControlName="firstname" placeholder="Enter your first name">
+                    <small class="text-danger" *ngIf="myForm.get('firstname')?.touched && myForm.get('firstname')?.hasError('required')">First name is required field</small>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input class="form-control" type="text" formControlName="lastname" placeholder="Enter your last name">
+                    <small class="text-danger" *ngIf="myForm.get('lastname')?.touched && myForm.get('lastname')?.hasError('required')">Last name is required field</small>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input class="form-control" type="text" formControlName="address" placeholder="Enter your address">
+                    <small class="text-danger" *ngIf="myForm.get('address')?.touched && myForm.get('address')?.hasError('required')">Please enter your address</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" formControlName="email" placeholder="Enter your email">
+                    <small class="text-danger" *ngIf="myForm.get('email')?.touched && myForm.get('email')?.hasError('email')">Please enter valid email</small>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input class="form-control" type="tel" formControlName="phone" placeholder="Enter your phone number">
+                    <small class="text-danger" *ngIf="myForm.get('phone')?.touched && myForm.get('phone')?.hasError('pattern')">Phone number should contain 10 digit numbers </small>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-primary" (click)="Submit()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
